@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="app.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+
+       <h3>
+           {{mensaje}}
+
+        </h3> 
+        <h3>
+            invertido - {{invertido}}
+        </h3>
+           
+        <input type="text" v-model='mensaje'>
+           
+ 
+        <button class="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" @click='contador++'>+</button>
+        <button class="bg-red-500 hover:bg-red-800 text-white font-bold py-2 px-4 rounded"  @click='contador--'>-</button>
+ 
+        <h4>{{contador}}</h4>
+
+       <div class="h-3 relative max-w-xl rounded-full overflow-hidden">
+    <div class="w-full h-full bg-gray-200 absolute"></div>
+    <div :class="['h-full', color , 'absolute']" :style='{"width":contador+"%"}'></div>
+</div>
+    </div>
+
+</body>
+</html>

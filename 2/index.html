@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="main.js"></script>
+    <title>Document</title>
+    <style>
+      /*   span {
+            color: red;
+        }
+
+        div[class] {
+            width: 10em;
+            height: 10em;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <div :class="['bg-red-800',{'text-sky-700' : !color},{'underline': subrallar} ]">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae vero repudiandae voluptates modi
+                tenetur repellat,
+                dignissimos rem voluptatum aperiam temporibus officia dolorem facere voluptate sapiente quia fugit ut,
+                officiis reprehenderit?</p>
+        </div>
+
+        <button @click="color= !color">cambiar</button>
+
+        <div :class="['bg-red-800',{'text-sky-700' : color },{'underline': !subrallar}] ">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae vero repudiandae voluptates modi
+                tenetur repellat,
+                dignissimos rem voluptatum aperiam temporibus officia dolorem facere voluptate sapiente quia fugit ut,
+                officiis reprehenderit?</p>
+        </div>
+
+        <button @click="color= !color">cambiar</button>
+
+        <div :class="['bg-red-800','color' ]">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae vero repudiandae voluptates modi
+                tenetur repellat,
+                dignissimos rem voluptatum aperiam temporibus officia dolorem facere voluptate sapiente quia fugit ut,
+                officiis reprehenderit?</p>
+        </div>
+
+        <button @click="color= !color , subrallar= !subrallar ">cambiar</button>
+
+    </div>
+
+
+</body>
+
+</html>

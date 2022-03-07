@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="main.js"></script>
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+<div id="app">
+
+    <h1>{{titulo}}</h1>
+
+    <ul>        
+        <li v-for= "fruta of frutas1">
+            <input type="number" v-model.parse = 'fruta.cantidad'>
+            
+            <span>{{fruta.nombre}}</span> cantidad= {{fruta.cantidad}}
+            <button @click='fruta.cantidad++'>+1</button>
+            <button @click='fruta.cantidad--'>-1</button>
+        <span v-if='fruta.cantidad < 10'>-menos de 10</span>    
+        </li>
+    </ul>
+    <h3>Total : {{sumarFrutas}}</h3>
+
+    fruta <input type="text" v-model='nuevaFruta'  @keyup.enter="agregarFruta">
+    cantidad <input type="number" v-model.parse='cantidad' @keyup.enter="agregarFruta">
+
+    <p v-text='nuevaFruta'></p>
+    <p v-text='cantidad'></p>
+      
+
+    <button @click='agregarFruta'> agregar</button>
+
+</div>
+
+
+</body>
+</html>
